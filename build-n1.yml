@@ -1,0 +1,22 @@
+name: Build N1
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Package Armvirt as OpenWrt
+        uses: unifreq/openwrt_packit@master
+        env:
+          OPENWRT_ARMVIRT: https://alog148-my.sharepoint.com/:u:/g/personal/e1_alog148_onmicrosoft_com/EbUt58BZ8nBDoO1ckPjiDvYBagpCAHO3iUubz0RyWVX6pA?download=1
+          PACKAGE_SOC: s905d
+          KERNEL_VERSION_NAME: 5.15.30
+          
+      - name: Upload firmware directory
+        uses: actions/upload-artifact@main
+        with:
+          name: N1_firmware
+          path: ${{ env.PACKAGED_OUTPUTPATH }}
