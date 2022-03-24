@@ -11,7 +11,7 @@ jobs:
       - name: Package Armvirt as OpenWrt
         uses: unifreq/openwrt_packit@master
         env:
-          OPENWRT_ARMVIRT: https://alog148-my.sharepoint.com/:u:/g/personal/e1_alog148_onmicrosoft_com/EbUt58BZ8nBDoO1ckPjiDvYBagpCAHO3iUubz0RyWVX6pA?download=1
+          OPENWRT_ARMVIRT: 1
           PACKAGE_SOC: s905d
           KERNEL_VERSION_NAME: 5.15.30
           
